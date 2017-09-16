@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#
+
+file = Rails.root.to_s + '/db/mandrill.log'
+addresses = AddressData.new(file)
+addresses.populate
+
