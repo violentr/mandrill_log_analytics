@@ -1,0 +1,9 @@
+<div> Emails sent: <%= Address.sent.size %>  </div>
+<div> Emails clicked: <%= Address.clicked.size %>  </div>
+<div> Emails opened: <%= Address.opened.size %>  </div>
+<hr \>
+<% %w(opened clicked).each do |event| %>
+  <% Address.uniq_email_types.each do |type| %>
+    <div> <%= event.capitalize %> wih emailtype '<%= type %>': <%= Address.send("#{event}_#{type}".to_sym).size %>   </div>
+  <% end %>
+<% end %>
