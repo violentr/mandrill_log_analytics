@@ -4,6 +4,6 @@
 <hr \>
 <% %w(opened clicked).each do |event| %>
   <% Address.uniq_email_types.each do |type| %>
-    <div> <%= event.capitalize %> wih emailtype '<%= type %>': <%= Address.send("#{event}_#{type}".to_sym).size %>   </div>
+    <div> <%= event.capitalize %> wih emailtype '<%= type %>': <strong><%= Address.send("#{event}_#{type}".to_sym) %> % </strong>   </div>
   <% end %>
 <% end %>
